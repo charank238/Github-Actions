@@ -7,22 +7,17 @@ on:
         description: 'Name'
         type: string
         default: 'test'
-      name:
+      age:
         description: 'age'
         type: number
-        default: 'test'
-        
-  
+        required: true
+
 jobs:
   manual:
     runs-on: ubuntu-latest
     
     steps:
       - name: greetings
-        run: echo "${{ input.name }}"
-    
-    steps:
+        run: echo "${{ github.event.inputs.name }}"
       - name: age
-        run: echo "${{ input.name }}"
-
-        
+        run: echo "${{ github.event.inputs.age }}"
