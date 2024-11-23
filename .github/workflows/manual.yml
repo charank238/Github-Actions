@@ -10,14 +10,15 @@ on:
       age:
         description: 'age'
         type: number
-        required: true
-
+        reuired: true
+        
 jobs:
   manual:
     runs-on: ubuntu-latest
     
     steps:
       - name: greetings
-        run: echo "${{ github.event.inputs.name }}"
+        run: echo "${{ input.name }}"
+    
       - name: age
-        run: echo "${{ github.event.inputs.age }}"
+        run: echo "${{ input.age }}"
