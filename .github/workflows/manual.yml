@@ -49,7 +49,7 @@ jobs:
           else
             echo "You are not married."
           fi
-      # - name: Environment
-      #   run: echo "Namespace: ${{ github.event.inputs.Env }}"
-      # - name: Service
-      #   run: echo "Service to deploy: ${{ github.event.inputs.Service }}"
+      - name: Environment
+        run: echo "Namespace: ${{ github.event.inputs.Env }}"
+      - name: Service
+        run: echo "Service to deploy: ${{ github.event.inputs.Service }}"
