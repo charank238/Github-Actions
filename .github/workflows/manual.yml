@@ -50,6 +50,18 @@ jobs:
             echo "You are not married."
           fi
       - name: Environment
-        run: echo "Namespace: ${{ github.event.inputs.Env }}"
+        run: |
+          if [[ -z "${{ github.event.inputs.Env }}" ]]; then
+            echo "Error: Namespace input is missing or invalid!"
+            exit 1
+          else
+            echo "Namespace: ${{ github.event.inputs.Env }}"
+          fi
       - name: Service
-        run: echo "Service to deploy: ${{ github.event.inputs.Service }}"
+        run: |
+          if [[ -z "${{ github.event.inputs.Service }}" ]]; then
+            echo "Error: Service input is missing or invalid!"
+            exit 1
+          else
+            echo "Service to deploy: ${{ github.event.inputs.Service }}"
+          fi
