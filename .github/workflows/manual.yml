@@ -2,7 +2,7 @@ name: manual world
 
 on:
   workflow_dispatch
-    input:
+    inputs:
       name:
         description: 'name'
         type : string
