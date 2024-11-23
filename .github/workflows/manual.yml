@@ -1,11 +1,11 @@
 name: manual world
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
     inputs:
       name:
         description: 'name'
-        type : string
+        type: string
         default: 'test'
       age:
         description: 'age'
@@ -20,18 +20,17 @@ on:
       married:
         description: 'Is married'
         type: boolean
-      
-      
+
 jobs:
   manual:
     runs-on: ubuntu-latest
-    
+
     steps:
-      -name: Greetings
-        run: echo "${{ inputs.name }}"
-      -name: age
-        run: echo "${{ inputs.age }}"
-      -name: gender
-        run: echo "${{ inputs.gender }}"
-      -name: married
-        run: echo "${{ inputs.married }}"
+      - name: Greetings
+        run: echo "${{ github.event.inputs.name }}"
+      - name: Age
+        run: echo "${{ github.event.inputs.age }}"
+      - name: Gender
+        run: echo "${{ github.event.inputs.gender }}"
+      - name: Married
+        run: echo "${{ github.event.inputs.married }}"
