@@ -10,7 +10,7 @@ on:
       name:
         description: 'age'
         type: number
-        default: 'test'
+        required: true 
         
   
 jobs:
