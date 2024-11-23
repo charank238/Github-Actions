@@ -1,0 +1,12 @@
+name: manual world
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: greetings
+        run: echo "This is first task vamsi"
