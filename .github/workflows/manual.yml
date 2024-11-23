@@ -23,12 +23,12 @@ on:
       Env:
         description: 'Namespace'
         required: true
-        default: ''
+        default: 'hhhjf'
         type: string
       Service:
         description: 'Service to deploy'
         required: true
-        default: ''
+        default: 'hhh'
         type: string  
 
 jobs:
