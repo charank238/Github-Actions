@@ -20,16 +20,36 @@ on:
       married:
         description: 'Is married'
         type: boolean
+      Env:
+        description: 'Namespace'
+        required: true
+        default: ''
+        type: string
+      Service:
+        description: 'Service to deploy'
+        required: true
+        default: ''
+        type: string  
 
 jobs:
   manual:
     runs-on: ubuntu-latest
+
     steps:
       - name: Greetings
-        run: echo "Hello, ${{ inputs.name }}!"
+        run: echo "Hello, ${{ github.event.inputs.name }}!"
       - name: Age
-        run: echo "Your age is ${{ inputs.age }}."
+        run: echo "Your age is ${{ github.event.inputs.age }}."
       - name: Gender
-        run: echo "Your gender is ${{ inputs.gender }}."
+        run: echo "Your gender is ${{ github.event.inputs.gender }}."
       - name: Marital Status
-        run: echo "You are ${{ inputs.married }}."
+        run: |
+          if [[ "${{ github.event.inputs.married }}" == "true" ]]; then
+            echo "You are married."
+          else
+            echo "You are not married."
+          fi
+      # - name: Environment
+      #   run: echo "Namespace: ${{ github.event.inputs.Env }}"
+      # - name: Service
+      #   run: echo "Service to deploy: ${{ github.event.inputs.Service }}"
