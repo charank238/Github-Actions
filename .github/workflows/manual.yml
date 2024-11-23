@@ -2,11 +2,19 @@ name: manual world
 
 on:
   workflow_dispatch:
-
+    inputs:
+      name:
+        description: 'Name'
+        type: string
+        default: 'test'
+        
+  
 jobs:
-  demo:
+  manual:
     runs-on: ubuntu-latest
     
     steps:
       - name: greetings
-        run: echo "This is first task vamsi"
+        run: echo "${{ input.name }}"
+
+        
