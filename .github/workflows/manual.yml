@@ -10,7 +10,7 @@ on:
       age:
         description: 'age'
         type: number
-        reuired: true
+        required: true
         
 jobs:
   manual:
