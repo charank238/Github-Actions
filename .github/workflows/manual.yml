@@ -1,0 +1,37 @@
+name: manual world
+
+on:
+  workflow_dispatch
+    input:
+      name:
+        description: 'name'
+        type : string
+        default: 'test'
+      age:
+        description: 'age'
+        type: number
+        required: true
+      gender:
+        description: 'gender'
+        type: choice
+        options:
+          - Male
+          - Female
+      married:
+        description: 'Is married'
+        type: boolean
+      
+      
+jobs:
+  manual:
+    runs-on: ubuntu-latest
+    
+    steps:
+      -name: Greetings
+        run: echo "${{ inputs.name }}"
+      -name: age
+        run: echo "${{ inputs.age }}"
+      -name: gender
+        run: echo "${{ inputs.gender }}"
+      -name: married
+        run: echo "${{ inputs.married }}"
