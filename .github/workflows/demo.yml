@@ -1,1 +1,14 @@
+name: hello world
 
+on:
+  push:
+    branches:
+      - Main
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: greetings
+        run: echo "This is first task vamsi"
