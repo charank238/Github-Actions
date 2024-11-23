@@ -4,15 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'name'
+        description: 'Name'
         type: string
         default: 'test'
       age:
-        description: 'age'
+        description: 'Age'
         type: number
         required: true
       gender:
-        description: 'gender'
+        description: 'Gender'
         type: choice
         options:
           - Male
@@ -24,14 +24,12 @@ on:
 jobs:
   manual:
     runs-on: ubuntu-latest
-    
     steps:
-      -name: Greetings
-        run: echo "${{ inputs.name }}"
-      -name: age
-        run: echo "${{ inputs.age }}"
-      -name: gender
-        run: echo "${{ inputs.gender }}"
-      -name: married
-        run: echo "${{ inputs.married }}"
-     
+      - name: Greetings
+        run: echo "Hello, ${{ inputs.name }}!"
+      - name: Age
+        run: echo "Your age is ${{ inputs.age }}."
+      - name: Gender
+        run: echo "Your gender is ${{ inputs.gender }}."
+      - name: Marital Status
+        run: echo "You are ${{ inputs.married }}."
