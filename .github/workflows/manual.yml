@@ -21,7 +21,6 @@ jobs:
       - name: greetings
         run: echo "${{ input.name }}"
     
-    steps:
       - name: age
         run: echo "${{ input.age }}"
 
