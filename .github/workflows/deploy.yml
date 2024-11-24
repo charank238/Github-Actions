@@ -39,10 +39,10 @@ jobs:
 
   build-to-deploy:
     runs-on: ubuntu-latest
+    if: ${{ always() }}
     needs:
       - build-angular
       - sample
-    if: ${{ always() }}
     steps:
       - name: Deployment message
         run: echo "Deployment done"
