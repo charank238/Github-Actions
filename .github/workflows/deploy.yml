@@ -37,6 +37,7 @@ jobs:
 jobs:
   Build to deploy:
     runs-on: ubuntu-latest
+    if: $ {{ always() }}
     needs:
       - build-angular
       - sample
