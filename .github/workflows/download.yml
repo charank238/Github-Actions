@@ -29,6 +29,7 @@ jobs:
   deploy-angular:
     runs-on: ubuntu-latest
     needs: build-angular
+    if: ${{ always() }}
     steps:
       - name: Download a Build Artifact
         uses: actions/download-artifact@v4
