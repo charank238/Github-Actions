@@ -1,0 +1,19 @@
+name: deploy angular app
+
+on:
+  workflow_dispatch:
+jobs:  
+  deploy-angular:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download a Build Artifact
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          name: Build-artifact
+          path: artifact
+          workflow: build.angular.yml
+          github_token: ${{ github.token }}
+          repo: ${{ github.repository }}
+          run_number: 6
+      - name: displace the artifact files
+        run: ls -R artifact
